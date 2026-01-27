@@ -1,9 +1,9 @@
-name: Deploy static content to Pages
+name: Deploy static content to GitHub Pages
 
 on:
   push:
-    branches: ["master"]
-  workflow_dispatch: # Allow manual triggers from the Actions tab
+    branches: ["main", "master"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,24 +11,29 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages-deploy
+  cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: https://Vpragadeesh.github.io/portfolio/
-    runs-on: alpine-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: github-pages
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Pages
+
+      # If your site requires a build step (npm, hugo, jekyll, etc.),
+      # add the build steps here and set `path` below to the build output folder (e.g. "dist" or "_site").
+
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifact
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' # Upload all files from the root directory
+          # By default upload the repository root. Change to your build output if needed.
+          path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
