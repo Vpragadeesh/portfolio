@@ -21,8 +21,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # If your site requires a build step (npm, hugo, jekyll, etc.),
-      # add the build steps here and set `path` below to the build output folder (e.g. "dist" or "_site").
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build
+        run: bun run build
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -30,8 +38,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # By default upload the repository root. Change to your build output if needed.
-          path: '.'
+          path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,0 +1,708 @@
+<!-- PROJECTS (updated: only the requested projects) -->
+<section id="projects" class="wrap">
+<head>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pragadeesh V — AI/ML Researcher & Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Pragadeesh V — AI/ML Researcher, Full-Stack Developer and Open Source Contributor." />
+    <meta property="og:title" content="Pragadeesh V — Developer Portfolio" />
+    <meta property="og:description" content="AI/ML Researcher | Full-Stack Developer | Open Source Contributor" />
+    <meta name="theme-color" content="#6366f1" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg:#ffffff;
+            --card:#f7f7fb;
+            --text:#0f1724;
+            --muted:#6b7280;
+            --accent:#6366f1;
+            --glass: rgba(255,255,255,0.6);
+            --shadow: 0 6px 20px rgba(16,24,40,0.06);
+            --radius: 12px;
+            --container: 1100px;
+        }
+        .dark{
+            --bg:#0b1020;
+            --card: rgba(255,255,255,0.03);
+            --text:#e6eef8;
+            --muted:#9aa6bf;
+            --accent:#8b86ff;
+            --glass: rgba(255,255,255,0.04);
+            --shadow: 0 8px 30px rgba(2,6,23,0.6);
+        }
+
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{
+            font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+            margin:0;
+            background:var(--bg);
+            color:var(--text);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
+            -webkit-tap-highlight-color:transparent;
+            padding-top:72px; /* for fixed nav */
+        }
+
+        /* Container */
+        .wrap{max-width:var(--container);margin:0 auto;padding:2rem;}
+
+/* NAV */
+        nav.nav{
+            position:fixed;left:0;right:0;top:0;height:72px;
+            display:flex;align-items:center;justify-content:center;
+            backdrop-filter: blur(6px);
+            background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+            border-bottom:1px solid rgba(16,24,40,0.04);
+            z-index:60;
+            transition:background .25s ease, border-color .25s ease;
+        }
+        .dark nav.nav{
+            background: linear-gradient(180deg, rgba(6,10,20,0.6), rgba(6,10,20,0.35));
+            border-bottom:1px solid rgba(255,255,255,0.04);
+        }
+        .nav-inner{max-width:var(--container);width:100%;display:flex;align-items:center;gap:1rem;padding:0 1rem;}
+        .brand{font-weight:700;color:var(--accent);font-size:1.05rem;letter-spacing:0.2px}
+        .nav-links{margin-left:auto;display:flex;gap:1rem;align-items:center}
+        .nav-links a{color:var(--muted);text-decoration:none;padding:.45rem .7rem;border-radius:8px;font-weight:600;font-size:0.95rem}
+        .nav-links a:hover{color:var(--accent);background:var(--glass)}
+        .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:.45rem .7rem;border-radius:8px;color:var(--muted);cursor:pointer}
+        .dark .btn-ghost{border:1px solid rgba(255,255,255,0.06)}
+        .icon-btn{display:inline-flex;align-items:center;gap:.5rem}
+
+/* HERO */
+        header.hero{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;padding:2rem 0;}
+        .hero-grid{display:flex;flex-direction:column;gap:1rem}
+        .intro{
+            max-width:730px;
+        }
+        .kicker{display:inline-block;padding:.25rem .6rem;background:linear-gradient(90deg, rgba(99,102,241,0.12), rgba(139,134,255,0.08));color:var(--accent);font-weight:700;border-radius:999px;font-size:0.85rem;margin-bottom:.6rem}
+        h1{font-size:2.2rem;margin:0 0 .6rem;line-height:1.02}
+        .subtitle{font-size:1.15rem;color:var(--muted);margin-bottom:.9rem}
+        .tagline{font-weight:700;color:var(--accent);display:inline-block}
+        .cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.6rem}
+        .btn{
+            background:var(--accent);color:white;padding:.74rem 1.1rem;border-radius:10px;border:none;font-weight:700;cursor:pointer;box-shadow: var(--shadow);
+            transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+        }
+        .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(99,102,241,0.14)}
+        .btn:hover{transform:translateY(-3px)}
+        .profile{
+            display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:14px;background:var(--card);box-shadow:var(--shadow);
+        }
+        .avatar{
+            width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,var(--accent),#7c6bff);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:2rem;flex-shrink:0;
+            box-shadow:0 8px 24px rgba(99,102,241,0.12);
+        }
+        .profile p{margin:0;color:var(--muted)}
+
+        /* Stats */
+        .stats{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+        .stat{
+            background:var(--card);padding:.8rem 1rem;border-radius:12px;display:flex;align-items:center;gap:0.8rem;min-width:150px;box-shadow:var(--shadow)
+        }
+        .stat .num{font-weight:800;color:var(--accent);font-size:1.2rem}
+        .stat .label{font-size:.9rem;color:var(--muted)}
+
+        /* Sections */
+        section{padding:3.25rem 0}
+        h2.section-title{font-size:1.6rem;margin:0 0 1.2rem}
+        .cards{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}
+        .card{
+            background:var(--card);border-radius:12px;padding:1rem;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;
+        }
+        .card:hover{transform:translateY(-6px)}
+        .card .meta{color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+        .badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+        .badge{background:rgba(99,102,241,0.12);color:var(--accent);padding:.35rem .6rem;border-radius:999px;font-weight:700;font-size:0.82rem}
+
+        /* Projects Grid */
+        .projects-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}
+        .project{
+            display:flex;flex-direction:column;gap:.6rem;
+            min-height:200px;
+        }
+        .project .thumb{
+            height:140px;border-radius:10px;background:linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,134,255,0.08));display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;font-size:1.1rem;
+        }
+        .project .actions{display:flex;gap:.5rem;margin-top:auto}
+        .link-btn{padding:.5rem .7rem;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+        .link-btn.ghost{background:transparent;border:1px solid rgba(99,102,241,0.12);color:var(--accent)}
+        .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+        .chip{padding:.4rem .7rem;border-radius:999px;background:transparent;border:1px solid rgba(99,102,241,0.09);cursor:pointer;color:var(--muted);font-weight:700}
+        .chip.active{background:var(--accent);color:white;border-color:transparent;box-shadow:var(--shadow)}
+
+        /* Experience timeline */
+        .timeline{display:flex;flex-direction:column;gap:.8rem}
+        .timeline-item{display:flex;gap:.8rem;align-items:flex-start}
+        .timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-top:6px}
+        .timeline-body{background:var(--card);padding:.8rem;border-radius:10px;box-shadow:var(--shadow)}
+
+        /* Blog cards */
+        .blog-grid{display:grid;gap:1rem}
+
+        /* Contact */
+        form.contact{display:grid;gap:.8rem;max-width:720px}
+        input,textarea{width:100%;padding:.8rem;border-radius:8px;border:1px solid rgba(16,24,40,0.06);background:transparent;color:var(--text);resize:vertical}
+        .dark input,.dark textarea{border:1px solid rgba(255,255,255,0.06)}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+        .small{font-size:.9rem;color:var(--muted)}
+
+        /* Footer */
+        footer{padding:2rem 0;border-top:1px solid rgba(16,24,40,0.04);margin-top:1rem}
+        .footer-links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+
+        /* Animations */
+        .fade-in{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+        .fade-in.in{opacity:1;transform:none}
+        .typing{border-right:2px solid rgba(99,102,241,0.9);white-space:nowrap;overflow:hidden}
+
+        /* Responsive */
+        @media(min-width:760px){
+            header.hero{grid-template-columns: 1fr 380px}
+            .projects-grid{grid-template-columns:repeat(2,1fr)}
+            .cards{grid-template-columns:repeat(2,1fr)}
+            .blog-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(min-width:1100px){
+            .projects-grid{grid-template-columns:repeat(3,1fr)}
+            .cards{grid-template-columns:repeat(3,1fr)}
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" aria-label="Main navigation">
+        <div class="nav-inner">
+            <div class="brand">Pragadeesh V</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <button id="themeToggle" class="btn-ghost" title="Toggle theme">Toggle</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="wrap">
+            <header class="hero">
+                <div class="hero-grid">
+                    <div class="intro fade-in" data-anim>
+                        <div class="kicker">AI / ML • Full-Stack • Open Source</div>
+                        <h1>
+                            Hi, I'm <span class="tagline">Pragadeesh V</span>
+                        </h1>
+                        <div class="subtitle">
+                            <span id="typed" class="typing"></span>
+                        </div>
+
+                        <p class="small" style="margin-top:.5rem">
+                            I'm an AI/ML researcher and full‑stack developer who builds production-grade systems, conducts research in handwritten recognition and applied deep learning, and contributes to open-source projects.
+                        </p>
+
+                        <div class="cta-row">
+                            <a class="btn" href="#projects">View Projects</a>
+                            <a class="btn secondary" href="resume.pdf" download>Download Resume</a>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="stats">
+                            <div class="stat">
+                                <div>
+                                    <div class="num" data-target="6">0</div>
+                                    <div class="label">Years coding</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <div>
+                                    <div class="num" data-target="8">0</div>
+                                    <div class="label">Hackathons</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <div>
+                                    <div class="num" data-target="2">0</div>
+                                    <div class="label">Publications (in‑progress)</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <div>
+                                    <div class="num" data-target="15">0</div>
+                                    <div class="label">Technologies</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile card -->
+                    <aside class="profile fade-in" data-anim>
+                        <div class="avatar" aria-hidden="true">PV</div>
+                        <div>
+                            <strong style="display:block;font-size:1.05rem">Pragadeesh V</strong>
+                            <p class="small">AI/ML Researcher • Full-Stack Developer • Open Source Contributor</p>
+                            <div style="margin-top:.6rem" class="badges">
+                                <span class="badge">Open Source</span>
+                                <span class="badge">Research</span>
+                                <span class="badge">Deep Learning</span>
+                                <span class="badge">Systems</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </header>
+        </section>
+        <!-- SKILLS -->
+        <section id="skills" class="wrap">
+            <h2 class="section-title">Skills</h2>
+            <div class="card fade-in" data-anim style="display:grid;gap:1rem">
+                <div style="display:flex;gap:1rem;flex-wrap:wrap">
+                    <div style="flex:1;min-width:220px">
+                        <div class="meta">Frontend</div>
+                        <div class="badges" style="margin-top:.5rem">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">React</span>
+                            <span class="badge">Tailwind</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;min-width:220px">
+                        <div class="meta">Backend</div>
+                        <div class="badges" style="margin-top:.5rem">
+                            <!-- <span class="badge">Node.js</span> -->
+                            <!-- <span class="badge">Django</span> -->
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">Flask</span>
+                            <span class="badge">Golang</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;min-width:220px">
+                        <div class="meta">AI / ML</div>
+                        <div class="badges" style="margin-top:.5rem">
+                            <span class="badge">PyTorch</span>
+                            <span class="badge">TensorFlow</span>
+                            <span class="badge">Deep Learning</span>
+                            <span class="badge">NLP</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;min-width:220px">
+                        <div class="meta">Tools</div>
+                        <div class="badges" style="margin-top:.5rem">
+                            <span class="badge">Git</span>
+                            <span class="badge">Docker</span>
+                            <span class="badge">Linux</span>
+                            <span class="badge">NixOS</span>
+                            <span class="badge">Arch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="wrap">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="filter-bar">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="ai">AI/ML</button>
+                <button class="chip" data-filter="web">Web</button>
+                <button class="chip" data-filter="blockchain">Blockchain</button>
+                <button class="chip" data-filter="systems">Systems</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Small Language Model (SLM) - Storytelling GPT -->
+                <article class="project card fade-in" data-anim data-category="ai">
+                    <div class="thumb">SLM</div>
+                    <h3 style="margin:0.4rem 0 0">Small Language Model - Storytelling GPT</h3>
+                    <div class="meta">Python, PyTorch, Transformers, CUDA, Rich CLI</div>
+                    <p style="color:var(--muted);margin-top:.6rem">Built a production-ready GPT-based language model with 16 layers trained on 5GB+ dataset using advanced techniques. Developed comprehensive inference system with nucleus sampling, repetition penalty, and interactive story generation.</p>
+                    <div class="badges" style="margin-top:.6rem">
+                        <span class="badge">Python</span><span class="badge">PyTorch</span><span class="badge">Transformers</span><span class="badge">CUDA</span>
+                    </div>
+                    <div class="actions" style="margin-top:.6rem">
+                        <a class="link-btn" href="#" target="_blank">GitHub</a>
+                        <a class="link-btn ghost" href="#" target="_blank">Demo</a>
+                    </div>
+                </article>
+
+                <!-- AI Sales Assistant -->
+                <article class="project card fade-in" data-anim data-category="ai web">
+                    <div class="thumb">AI Sales</div>
+                    <h3 style="margin:0.4rem 0 0">AI Sales Assistant</h3>
+                    <div class="meta">Python, FastAPI, AWS LangChain, Gmail API, RAG</div>
+                    <p style="color:var(--muted);margin-top:.6rem">Developed an AI-powered sales assistant capable of authenticating users via Google OAuth and generating personalized draft emails in Gmail. Integrated Retrieval-Augmented Generation (RAG) for contextual company information retrieval and personalized communication.</p>
+                    <div class="badges" style="margin-top:.6rem">
+                        <span class="badge">Python</span><span class="badge">FastAPI</span><span class="badge">LangChain</span><span class="badge">RAG</span>
+                    </div>
+                    <div class="actions" style="margin-top:.6rem">
+                        <a class="link-btn" href="#" target="_blank">GitHub</a>
+                        <a class="link-btn ghost" href="#" target="_blank">Live</a>
+                    </div>
+                </article>
+
+                <!-- Enable WiFi Hotspot Together -->
+                <article class="project card fade-in" data-anim data-category="systems">
+                    <div class="thumb">WiFi Hotspot</div>
+                    <h3 style="margin:0.4rem 0 0">Enable WiFi Hotspot Together</h3>
+                    <div class="meta">Bash, Linux</div>
+                    <p style="color:var(--muted);margin-top:.6rem">Developed a Linux project enabling concurrent WiFi hotspot functionality. Utilized C language scripting and Linux networking utilities to streamline hotspot management.</p>
+                    <div class="badges" style="margin-top:.6rem">
+                        <span class="badge">Bash</span><span class="badge">Linux</span><span class="badge">C</span><span class="badge">Networking</span>
+                    </div>
+                    <div class="actions" style="margin-top:.6rem">
+                        <a class="link-btn" href="#" target="_blank">GitHub</a>
+                        <a class="link-btn ghost" href="#" target="_blank">Download</a>
+                    </div>
+                </article>
+
+                <!-- Intrusion Detection System -->
+                <article class="project card fade-in" data-anim data-category="ai">
+                    <div class="thumb">IDS</div>
+                    <h3 style="margin:0.4rem 0 0">Intrusion Detection System</h3>
+                    <div class="meta">Python, PyTorch, Scikit-learn, CNN-LSTM, Random Forest, XGBoost</div>
+                    <p style="color:var(--muted);margin-top:.6rem">Built an IDS using a hybrid approach combining CNN-LSTM, Random Forest, and XGBoost on the NSL-KDD dataset. Implemented multi-GPU training with PyTorch to improve computation efficiency.</p>
+                    <div class="badges" style="margin-top:.6rem">
+                        <span class="badge">Python</span><span class="badge">PyTorch</span><span class="badge">CNN-LSTM</span><span class="badge">XGBoost</span>
+                    </div>
+                    <div class="actions" style="margin-top:.6rem">
+                        <a class="link-btn" href="#" target="_blank">GitHub</a>
+                        <a class="link-btn ghost" href="#" target="_blank">Results</a>
+                    </div>
+                </article>
+
+                
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="wrap">
+            <h2 class="section-title">Experience & Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in" data-anim>
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-body">
+                        <strong>SDG Hackathon Participant</strong> <div class="small">2023</div>
+                        <p class="small" style="margin-top:.4rem;color:var(--muted)">Built ML solutions for social impact challenges focused on sustainability and accessibility.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-anim>
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-body">
+                        <strong>FOSS Hackathon Winner</strong> <div class="small">2023</div>
+                        <p class="small" style="margin-top:.4rem;color:var(--muted)">Won for technical excellence building a cross-platform vector editor in C++/Rust.</p>
+                    </div>
+                </div>
+
+                <!-- <div class="timeline-item fade-in" data-anim>
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-body">
+                        <strong>Open Source Contributor</strong> <div class="small">2022 - Present</div>
+                        <p class="small" style="margin-top:.4rem;color:var(--muted)">Maintaining tools and libraries related to ML tooling and developer utilities.</p>
+                    </div>
+                </div> -->
+
+                <div class="timeline-item fade-in" data-anim>
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-body">
+                        <strong>Algorithm & Practice</strong> <div class="small">LeetCode</div>
+                        <p class="small" style="margin-top:.4rem;color:var(--muted)">Solved 550+ problems to strengthen algorithmic and system design skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section id="publications" class="wrap">
+            <h2 class="section-title">Publications & Research</h2>
+            <div class="cards">
+                <div class="card fade-in" data-anim>
+                    <div class="meta">Review Paper</div>
+                    <h3 style="margin-top:.25rem">Advancements in Handwritten Digit and Character Recognition</h3>
+                    <p style="color:var(--muted);margin-top:.6rem">A comprehensive review of architectures, datasets, and techniques in handwritten recognition. (In progress)</p>
+                    <div style="margin-top:.6rem">
+                        <a class="link-btn ghost" href="#" target="_blank">Read Draft</a>
+                        <a class="link-btn" href="#" target="_blank">Repo</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in" data-anim>
+                    <div class="meta">Research Notes</div>
+                    <h3 style="margin-top:.25rem">Experiments & Benchmarks</h3>
+                    <p style="color:var(--muted);margin-top:.6rem">Benchmark logs, reproducible scripts and model cards for the handwritten recognition experiments.</p>
+                </div>
+
+                <div class="card fade-in" data-anim>
+                    <div class="meta">Future Work</div>
+                    <h3 style="margin-top:.25rem">Ongoing</h3>
+                    <p style="color:var(--muted);margin-top:.6rem">More papers and reproducible research to be published soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG (Optional placeholder) -->
+        <section id="blog" class="wrap">
+            <h2 class="section-title">Blog</h2>
+            <div class="blog-grid">
+                <article class="card fade-in" data-anim>
+                    <h3 style="margin:0 0 .4rem">Deep Learning Notes — RNN vs Transformer</h3>
+                    <p class="small" style="color:var(--muted)">Short excerpt about sequence models, attention and practical considerations for handwriting tasks.</p>
+                    <div style="margin-top:.6rem">
+                        <a class="link-btn ghost" href="#">Read More</a>
+                    </div>
+                </article>
+
+                <article class="card fade-in" data-anim>
+                    <h3 style="margin:0 0 .4rem">Optimizing Multi-GPU Training</h3>
+                    <p class="small" style="color:var(--muted)">Notes on profiling and reducing communication overhead in distributed setups.</p>
+                    <div style="margin-top:.6rem">
+                        <a class="link-btn ghost" href="#">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="wrap">
+            <h2 class="section-title">Get In Touch</h2>
+
+            <div style="display:grid;grid-template-columns:1fr;gap:1rem">
+                <div class="card fade-in" data-anim>
+                    <strong>Contact</strong>
+                    <p class="small" style="color:var(--muted);margin-top:.4rem">Open to collaborations, research positions, and freelance work. Based in India.</p>
+
+                    <div style="margin-top:.8rem;display:flex;gap:.6rem;flex-wrap:wrap">
+                        <a class="chip" href="mailto:pragadeesh@example.com">Email</a>
+                        <a class="chip" href="https://github.com/pragadeesh" target="_blank">GitHub</a>
+                        <a class="chip" href="https://linkedin.com/in/pragadeesh" target="_blank">LinkedIn</a>
+                        <a class="chip" href="https://twitter.com/pragadeesh" target="_blank">Twitter</a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact card fade-in" data-anim>
+                    <div style="display:flex;justify-content:space-between;gap:.6rem">
+                        <input id="name" name="name" type="text" placeholder="Your name" required />
+                        <input id="email" name="email" type="email" placeholder="Your email" required />
+                    </div>
+                    <textarea id="message" name="message" rows="5" placeholder="Message (brief)" required></textarea>
+                    <div style="display:flex;gap:.6rem;align-items:center">
+                        <button id="sendBtn" class="btn" type="submit">Send Message</button>
+                        <div id="formMsg" class="small" style="color:var(--muted)"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="wrap">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div style="color:var(--muted);font-size:.95rem">© <span id="year"></span> Pragadeesh V. All rights reserved.</div>
+            </div>
+        </footer>
+        <!-- ABOUT -->
+        <section id="about" class="wrap">
+            <h2 class="section-title">About Me</h2>
+            <div class="cards">
+                <div class="card fade-in" data-anim>
+                    <div class="meta">Background</div>
+                    <h3 style="margin-top:.25rem">Who I am</h3>
+                    <p style="color:var(--muted);margin-top:.6rem">
+                        I research and build applied deep learning systems — from handwritten recognition models to production-ready AI assistants. I'm passionate about reproducible research, performance optimization on GPUs, and open-source tooling. I enjoy systems programming (C++, Rust), backend services (Go, Python), and modern frontend stacks.
+                    </p>
+                </div>
+
+                <div class="card fade-in" data-anim>
+                    <div class="meta">Research & Interests</div>
+                    <h3 style="margin-top:.25rem">Focus Areas</h3>
+                    <p style="color:var(--muted);margin-top:.6rem">
+                        Handwritten recognition, sequence modeling, efficient large-scale training, retrieval-augmented generation, and responsible AI. I publish reviews and experiment results, and maintain reproducible codebases in PyTorch and TensorFlow.
+                    </p>
+                </div>
+
+                <div class="card fade-in" data-anim>
+                    <div class="meta">Quick Highlights</div>
+                    <h3 style="margin-top:.25rem">Skills & Stats</h3>
+                    <div style="margin-top:.6rem" class="badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">PyTorch</span>
+                        <span class="badge">React</span>
+                        <span class="badge">Go</span>
+                        <span class="badge">C++ / Rust</span>
+                        <span class="badge">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Basic theme handling
+        (function(){
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const saved = localStorage.getItem('theme');
+            if(saved === 'dark' || (!saved && prefersDark)){
+                document.documentElement.classList.add('dark');
+            }
+            const btn = document.getElementById('themeToggle');
+            btn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            });
+        })();
+
+        // Typing animation for tagline
+        (function(){
+            const phrases = ["AI/ML Researcher", "Full-Stack Developer", "Open Source Contributor"];
+            const el = document.getElementById('typed');
+            let p = 0, i = 0, deleting = false;
+            const speed = 60, hold = 1200;
+
+            function tick(){
+                const full = phrases[p];
+                if(!deleting){
+                    el.textContent = full.slice(0, ++i);
+                    if(i === full.length){ deleting = true; setTimeout(tick, hold); return; }
+                } else {
+                    el.textContent = full.slice(0, --i);
+                    if(i === 0){ deleting = false; p = (p+1) % phrases.length; }
+                }
+                setTimeout(tick, deleting ? speed/1.5 : speed);
+            }
+            tick();
+        })();
+
+        // Animated counters
+        (function(){
+            const counters = document.querySelectorAll('.num');
+            const run = (el) => {
+                const target = +el.getAttribute('data-target') || 0;
+                const dur = 1100;
+                let start = 0;
+                const step = Math.ceil(target / (dur / 16));
+                function frame(){
+                    start += step;
+                    if(start >= target){ el.textContent = target; return; }
+                    el.textContent = start;
+                    requestAnimationFrame(frame);
+                }
+                frame();
+            };
+            const obs = new IntersectionObserver((entries, o)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting){
+                        e.target.querySelectorAll('.num').forEach(run);
+                        o.unobserve(e.target);
+                    }
+                });
+            }, {threshold:0.2});
+            document.querySelectorAll('section').forEach(s => obs.observe(s));
+        })();
+
+        // Fade-in observer for elements with data-anim
+        (function(){
+            const anims = document.querySelectorAll('[data-anim]');
+            const obs = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting){
+                        e.target.classList.add('in');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, {threshold:0.12});
+            anims.forEach(a => obs.observe(a));
+        })();
+
+        // Project filtering
+        (function(){
+            const chips = document.querySelectorAll('.chip');
+            const projects = document.querySelectorAll('.project');
+            chips.forEach(chip=>{
+                chip.addEventListener('click', ()=>{
+                    chips.forEach(c=>c.classList.remove('active'));
+                    chip.classList.add('active');
+                    const filter = chip.dataset.filter;
+                    projects.forEach(p=>{
+                        const cats = (p.getAttribute('data-category') || '').split(/\s+/);
+                        if(filter === 'all' || cats.includes(filter)){
+                            p.style.display = '';
+                        } else {
+                            p.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        })();
+
+        // Contact form basic validation & fake submit
+        (function(){
+            const form = document.getElementById('contactForm');
+            const msg = document.getElementById('formMsg');
+            form.addEventListener('submit', (e)=>{
+                e.preventDefault();
+                msg.style.color = 'var(--muted)';
+                msg.textContent = 'Sending...';
+
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const message = form.message.value.trim();
+
+                if(!name || !email || !message){
+                    msg.style.color = 'crimson';
+                    msg.textContent = 'Please fill all fields.';
+                    return;
+                }
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!re.test(email)){
+                    msg.style.color = 'crimson';
+                    msg.textContent = 'Enter a valid email.';
+                    return;
+                }
+
+                // Simulate async send
+                setTimeout(()=>{
+                    form.reset();
+                    msg.style.color = 'green';
+                    msg.textContent = 'Message sent! I will reply soon.';
+                    setTimeout(()=> msg.textContent = '', 4200);
+                }, 900);
+            });
+        })();
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Accessibility: close reduce motion for users who prefer reduced motion
+        (function(){
+            if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+                document.querySelectorAll('.typing').forEach(t=>t.classList.remove('typing'));
+                // disable transitions
+                document.documentElement.style.setProperty('scroll-behavior', 'auto');
+            }
+        })();
+    </script>
+</body>
+
+
+
+
+
+</html>
